@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchChapterContent } from "@/services/bibleService";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ChevronLeft, Heart, Info, RefreshCcw } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 
 const ChapterContent = () => {
   const { chapterId } = useParams();
@@ -42,7 +42,7 @@ const ChapterContent = () => {
         </div>
       </div>
 
-      {/* Contenido del capítulo */}
+    
       <div className="px-4 md:px-8 lg:px-16 py-6 text-gray-900 leading-relaxed md:leading-loose text-base md:text-lg lg:text-xl">
         {loading ? (
           <div className="space-y-4">

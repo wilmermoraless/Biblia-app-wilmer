@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,10 @@ import BookList from "@/components/BookList";
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [books, setBooks] = useState<{ id: string; name: string }[]>([]);
-  const [passage, setPassage] = useState<{ reference: string; content: string } | null>(null);
+  const [passage, setPassage] = useState<{
+    reference: string;
+    content: string;
+  } | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,11 +28,21 @@ const Home = () => {
   return (
     <div className="container mx-auto p-4">
       <section className="flex justify-between gap-4 mb-4">
-        <Input className="flex-1" onChange={(e) => setSearchTerm(e.target.value)} value={searchTerm} placeholder="Buscar en la Biblia" />
-        <Button onClick={handleSearch} variant="destructive">Buscar</Button>
+        <Input
+          className="flex-1"
+          onChange={(e) => setSearchTerm(e.target.value)}
+          value={searchTerm}
+          placeholder="Buscar en la Biblia"
+        />
+        <Button onClick={handleSearch} variant="destructive">
+          Buscar
+        </Button>
       </section>
 
-      <BookList books={books} onSelect={(bookId) => navigate(`/book/${bookId}`)} />
+      <BookList
+        books={books}
+        onSelect={(bookId) => navigate(`/book/${bookId}`)}
+      />
 
       {passage && (
         <div className="mt-4">

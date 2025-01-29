@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchChapters } from "@/services/bibleService";
 import ChapterList from "@/components/ChapterList";
 
 const Chapters = () => {
   const { bookId } = useParams();
-  const [chapters, setChapters] = useState<{ id: string; reference: string }[]>([]);
+  const [chapters, setChapters] = useState<{ id: string; reference: string }[]>(
+    []
+  );
 
   useEffect(() => {
     if (bookId) {
