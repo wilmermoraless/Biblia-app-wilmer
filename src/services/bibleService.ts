@@ -1,4 +1,4 @@
-export const API_KEY = "baab03c2f316a9ef18acf0f6a0349c47";
+export const API_KEY = import.meta.env.VITE_API_KEY;
 export const BIBLE_ID = "592420522e16049f-01";
 
 const API_URL = "https://api.scripture.api.bible/v1/bibles";

@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { fetchBooks, fetchPassage } from "../services/bibleService";
 import BookList from "@/components/BookList";
+import { auth } from "../config/firebase";
+import { signOut } from "firebase/auth";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -25,6 +27,11 @@ const Home = () => {
     }
   };
 
+  const handleLogout = async () => {
+    await signOut(auth);
+    navigate("/login");
+  };
+
   return (
     <div className="container mx-auto p-4">
       <section className="flex justify-between gap-4 mb-4">
@@ -36,6 +43,9 @@ const Home = () => {
         />
         <Button onClick={handleSearch} variant="destructive">
           Buscar
+        </Button>
+        <Button className="hover:bg-red-500" onClick={handleLogout} variant="destructive">
+          Cerrar sesión
         </Button>
       </section>
 

@@ -12,11 +12,15 @@ const ChapterList: React.FC<ChapterListProps> = ({ chapters }) => {
   const handleChapterClick = (chapterId: string) => {
     navigate(`/chapter/${chapterId}/content`);
   };
-
+  const handleBackClick = () => {
+    navigate("/Home");
+  };
   return (
     <div className="p-4 sm:p-6 md:p-8">
       <div className="flex items-center mb-4">
-        <button className="p-2 bg-gray-200 rounded-full mr-2">⬅</button>
+        <button 
+        className="p-2 bg-gray-200 rounded-full mr-2"
+        onClick={handleBackClick}>⬅</button>
         <h2 className="text-xl md:text-2xl font-semibold text-gray-700"></h2>
       </div>
 
