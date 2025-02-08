@@ -1,6 +1,10 @@
+console.log("API_KEY:", import.meta.env.VITE_FIREBASE_API_KEY);
+console.log("AUTH_DOMAIN:", import.meta.env.VITE_FIREBASE_AUTH_DOMAIN);
+console.log("PROJECT_ID:", import.meta.env.VITE_FIREBASE_PROJECT_ID); 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
