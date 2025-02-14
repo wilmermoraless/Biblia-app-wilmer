@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 interface ChapterListProps {
   chapters: { id: string; reference: string }[];
@@ -12,15 +13,21 @@ const ChapterList: React.FC<ChapterListProps> = ({ chapters }) => {
   const handleChapterClick = (chapterId: string) => {
     navigate(`/chapter/${chapterId}/content`);
   };
+
   const handleBackClick = () => {
-    navigate("/Home");
+    navigate(-1);
   };
+
   return (
     <div className="p-4 sm:p-6 md:p-8">
       <div className="flex items-center mb-4">
-        <button 
-        className="p-2 bg-gray-200 rounded-full mr-2"
-        onClick={handleBackClick}>⬅</button>
+        <button
+          className="p-2 hover:bg-gray-300 rounded-full mr-2 transition-colors duration-200 flex items-center justify-center"
+          onClick={handleBackClick}
+          aria-label="Regresar"
+        >
+          <ArrowLeft className="w-5 h-5" />
+        </button>
         <h2 className="text-xl md:text-2xl font-semibold text-gray-700"></h2>
       </div>
 

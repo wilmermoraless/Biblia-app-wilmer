@@ -14,6 +14,7 @@ const BookList: React.FC<BookListProps> = ({ books, onSelect }) => {
         {books.map((book, index) => (
           <Card 
             key={book.id} 
+            role="article"
             className={`cursor-pointer p-4 rounded-lg shadow-md transition duration-300 ${index % 2 === 0 ? 'bg-gray-200' : 'bg-blue-200'}`}
             onClick={() => onSelect(book.id)}
           >
