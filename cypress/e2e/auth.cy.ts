@@ -1,7 +1,7 @@
 describe("Autenticación", () => {
   beforeEach(() => {
-    // Limpiar localStorage antes de cada prueba
     cy.clearLocalStorage();
+    Cypress.config('baseUrl', 'http://localhost:3000');
   });
 
   it("debe redirigir a la página de login si no hay usuario", () => {
