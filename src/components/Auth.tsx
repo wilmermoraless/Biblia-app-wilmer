@@ -70,6 +70,7 @@ const Auth = () => {
         <Button
           className="w-full flex items-center justify-center mb-2 border border-gray-300 text-gray-200"
           onClick={() => handleSocialLogin(new GoogleAuthProvider())}
+          data-testid="google-auth-button"
         >
           <FcGoogle className="h-5 w-5 mr-2" />
           Log in with Google
@@ -78,6 +79,7 @@ const Auth = () => {
         <Button
           className="w-full flex items-center justify-center mb-2 border border-gray-300 text-gray-200"
           onClick={() => handleSocialLogin(new FacebookAuthProvider())}
+          data-testid="facebook-auth-button"
         >
           <FaFacebook className="h-5 w-5 mr-2 text-blue-600" />
           Log in with Facebook
@@ -86,6 +88,7 @@ const Auth = () => {
         <Button
           className="w-full flex items-center justify-center mb-4 border border-gray-300 text-gray-200"
           onClick={() => handleSocialLogin(new GithubAuthProvider())}
+          data-testid="github-auth-button"
         >
           <FaGithub className="h-5 w-5 mr-2" />
           Log in with GitHub
@@ -99,6 +102,7 @@ const Auth = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="mb-2"
+          data-testid="email-input"
         />
         <Input
           type="password"
@@ -106,11 +110,13 @@ const Auth = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="mb-4"
+          data-testid="password-input"
         />
 
         <Button
           className="w-full bg-blue-500 text-white mb-2"
           onClick={loginWithEmail}
+          data-testid="login-button"
         >
           Login
         </Button>
@@ -128,6 +134,7 @@ const Auth = () => {
         <Button
           className="w-full mt-4 bg-gray-300 text-gray-700"
           onClick={handleLogout}
+          data-testid="logout-button"
         >
           Logout
         </Button>
