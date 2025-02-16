@@ -15,3 +15,10 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+// Silenciar errores de Firebase no necesarios para las pruebas
+Cypress.on('uncaught:exception', (err) => {
+  if (err.message.includes('Firebase')) {
+    return false
+  }
+})

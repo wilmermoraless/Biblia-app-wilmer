@@ -1,0 +1,9 @@
+{
+  "books": [
+    { "id": "1", "name": "Génesis" },
+    { "id": "2", "name": "Éxodo" },
+    { "id": "3", "name": "Levítico" },
+    { "id": "4", "name": "Números" },
+    { "id": "5", "name": "Deuteronomio" }
+  ]
+} 
